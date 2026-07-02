@@ -164,4 +164,6 @@ data/cards.sqlite3
 data/assets/
 ```
 
-`data/` is ignored by Git so local decks do not get committed accidentally.
+## Card generation from your knowledge base
+
+`AGENT_CARD_AUTHORING.md` contains basic instructions on generating cards regardless of your knowledge base using an LLM. Using it is recommended with context-specific prompting to ensure higher quality answers.
