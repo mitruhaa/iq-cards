@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Upward trend line</title>
+  <desc id="desc">A chart line rising from left to right.</desc>
+  <rect width="640" height="420" rx="24" fill="#f8fafc"/>
+  <path d="M92 330V84M92 330h456" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <path d="M126 292 230 244l92 26 86-112 108-54" fill="none" stroke="#168a57" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M498 86h48v48" fill="none" stroke="#168a57" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="126" cy="292" r="12" fill="#2563eb"/>
+  <circle cx="230" cy="244" r="12" fill="#2563eb"/>
+  <circle cx="322" cy="270" r="12" fill="#2563eb"/>
+  <circle cx="408" cy="158" r="12" fill="#2563eb"/>
+  <circle cx="516" cy="104" r="12" fill="#2563eb"/>
+</svg>

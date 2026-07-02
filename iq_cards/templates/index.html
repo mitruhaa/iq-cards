@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IQ Cards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">IQ</div>
+          <div>
+            <h1>IQ Cards</h1>
+            <p id="deckStatus">Loading deck</p>
+          </div>
+        </div>
+        <div class="toolbar" aria-label="Deck actions">
+          <button class="tool-button" id="importButton" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 15v3a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3"/>
+            </svg>
+            <span>Import cards</span>
+          </button>
+          <button class="tool-button" id="appendButton" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            <span>Add cards</span>
+          </button>
+          <button class="tool-button danger" id="clearButton" type="button" hidden>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 7h16M10 11v6m4-6v6M9 7l1-3h4l1 3m-8 0 1 13h8l1-13"/>
+            </svg>
+            <span>Clear all cards</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="empty-state" id="emptyState" hidden>
+          <h2>No cards yet</h2>
+          <div class="empty-actions">
+            <button class="primary-button" id="emptyImportButton" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 15v3a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3"/>
+              </svg>
+              <span>Import cards</span>
+            </button>
+            <button class="secondary-button" id="emptyAppendButton" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              <span>Add cards</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="study-view" id="studyView" hidden>
+          <div class="study-meta">
+            <span id="progressText">Card 1 of 1</span>
+            <span id="scoreText">0 correct / 0 incorrect</span>
+          </div>
+
+          <div class="card-scene" aria-live="polite">
+            <article class="flashcard" id="flashcard" tabindex="0">
+              <div class="card-face card-front">
+                <span class="face-label">Question</span>
+                <div class="card-copy" id="questionText"></div>
+              </div>
+              <div class="card-face card-back">
+                <span class="face-label">Answer</span>
+                <div class="answer-content">
+                  <div class="card-copy answer-text" id="answerText"></div>
+                  <div class="image-gallery" id="imageGallery"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="study-actions">
+            <button class="primary-button" id="revealButton" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/>
+                <path d="M12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
+              </svg>
+              <span>Reveal answer</span>
+            </button>
+            <button class="secondary-button success" id="correctButton" type="button" hidden>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m5 12 4 4L19 6"/>
+              </svg>
+              <span>Correct</span>
+            </button>
+            <button class="secondary-button danger" id="incorrectButton" type="button" hidden>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6 6 18"/>
+              </svg>
+              <span>Incorrect</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="summary-view" id="summaryView" hidden>
+          <h2>Session complete</h2>
+          <div class="summary-grid">
+            <div>
+              <span>Correct</span>
+              <strong id="summaryCorrect">0</strong>
+            </div>
+            <div>
+              <span>Total</span>
+              <strong id="summaryTotal">0</strong>
+            </div>
+            <div>
+              <span>Score</span>
+              <strong id="summaryPercent">0%</strong>
+            </div>
+          </div>
+          <button class="primary-button" id="reviewButton" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4 12a8 8 0 0 1 13.7-5.7L20 8M20 4v4h-4M20 12a8 8 0 0 1-13.7 5.7L4 16m0 4v-4h4"/>
+            </svg>
+            <span>Review again</span>
+          </button>
+        </section>
+      </main>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

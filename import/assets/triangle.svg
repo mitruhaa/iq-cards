@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Equilateral triangle</title>
+  <desc id="desc">A blue equilateral triangle with equal side markers.</desc>
+  <rect width="640" height="420" rx="24" fill="#f8fafc"/>
+  <path d="M320 62 106 354h428L320 62Z" fill="#dbeafe" stroke="#2563eb" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M194 232h44M402 232h44M298 338h44" stroke="#168a57" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="320" cy="62" r="12" fill="#2563eb"/>
+  <circle cx="106" cy="354" r="12" fill="#2563eb"/>
+  <circle cx="534" cy="354" r="12" fill="#2563eb"/>
+</svg>

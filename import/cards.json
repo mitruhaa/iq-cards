@@ -1,0 +1,39 @@
+{
+  "cards": [
+    {
+      "question": "What is the capital of Italy?",
+      "answer": {
+        "text": "Rome",
+        "images": []
+      }
+    },
+    {
+      "question": "Which database engine stores the local flashcards?",
+      "answer": {
+        "text": "SQLite stores the deck in a local file.",
+        "images": []
+      }
+    },
+    {
+      "question": "What does an equilateral triangle look like?",
+      "answer": {
+        "text": "It has three equal sides and three equal angles.",
+        "images": ["triangle.svg"]
+      }
+    },
+    {
+      "question": "Which button adds cards without deleting the current deck?",
+      "answer": {
+        "text": "Add cards appends imported cards to the existing deck.",
+        "images": []
+      }
+    },
+    {
+      "question": "What does an upward trend line suggest?",
+      "answer": {
+        "text": "Values are increasing over time.",
+        "images": ["trend.svg"]
+      }
+    }
+  ]
+}
