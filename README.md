@@ -2,7 +2,6 @@
 
 IQ Cards is a small multi-platform flashcards app written in Python. It runs a local web UI in your browser, stores cards in SQLite, imports decks from JSON, supports image answers, and can also run as a Docker container.
 
-The app is intentionally local-first: no account, no external service, and no network access required after dependencies are installed.
 
 ## Features
 
@@ -22,16 +21,12 @@ The app is intentionally local-first: no account, no external service, and no ne
 - A modern browser with JavaScript enabled.
 - Docker is optional.
 
-The browser UI depends on JavaScript for importing, revealing cards, scoring, and navigation. If buttons appear to do nothing, check that JavaScript is enabled for `127.0.0.1`.
-
 ## Run On Linux
 
 ```bash
 ./launch_linux.sh
 ```
-
-The script creates `.venv` if needed, installs `requirements.txt`, starts the app, and opens:
-
+Address:
 ```text
 http://127.0.0.1:5000/
 ```
@@ -43,8 +38,7 @@ Double-click `launch_windows.bat`, or run:
 ```bat
 launch_windows.bat
 ```
-
-It creates `.venv`, installs dependencies, and starts the same local browser app.
+Launches the app on the same address
 
 ## Manual Run
 
@@ -171,53 +165,3 @@ data/assets/
 ```
 
 `data/` is ignored by Git so local decks do not get committed accidentally.
-
-## Development
-
-Install development dependencies:
-
-```bash
-python -m pip install -r requirements-dev.txt
-```
-
-Run tests:
-
-```bash
-python -m pytest
-```
-
-Install Playwright's browser runtime for visual UI tests:
-
-```bash
-python -m playwright install chromium
-python -m pytest tests/test_ui_playwright.py
-```
-
-## Troubleshooting
-
-Button clicks do nothing:
-
-- Make sure JavaScript is enabled in the browser.
-- Hard refresh the page with `Ctrl+F5` after changing frontend files.
-- Open the browser devtools console and check for errors.
-
-Import says an image is missing:
-
-- Confirm the image exists under `import/assets/`.
-- Use the same filename in `cards.json`, including extension.
-- Do not use absolute paths or `../`.
-
-The app imports from the wrong folder:
-
-- Start it from this project directory, or pass `--import-dir /path/to/import`.
-- In Docker, mount your import folder to `/app/import`.
-
-Port already in use:
-
-```bash
-python -m iq_cards --port 5010
-```
-
-Docker cannot save cards between runs:
-
-- Mount a persistent data volume with `-v "$PWD/data:/app/data"`.
