@@ -51,9 +51,7 @@ Use only the supplied or explicitly allowed source material. Do not invent facts
 
 When creating cards:
 
-- Preserve the user’s requested structure and style.
 - Cover the source according to the user’s priorities.
-- Keep each card useful as a standalone flashcard unless the user asks for a different format.
 - Avoid accidental duplicates.
 - Keep terminology, names, numbers, labels, and units faithful to the source.
 - If the source is ambiguous, prefer conservative wording or omit the uncertain claim.
@@ -64,9 +62,6 @@ If the user asks for a specific number of cards:
 
 - Produce exactly that number when the source supports it.
 - If there is too little source material, create as many grounded cards as possible and report the shortfall outside `cards.json`.
-- Do not pad with repeated, vague, unsupported, or trivial cards.
-- For large decks, distribute cards across the full source instead of exhausting one section first.
-- For small decks, prioritize the highest-value material according to the user’s stated goal.
 
 If the user asks for “all possible,” “comprehensive,” or similar:
 
@@ -166,16 +161,6 @@ Common cases:
 - Symbols or notation
 
 Do not add decorative images unless the user specifically wants them.
-
-## Generated Or Recreated Images
-
-If images need to be created:
-
-- Keep them factual and simple.
-- Save them under `import/assets/`.
-- Reference their filenames in `answer.images`.
-- Prefer SVG for simple diagrams when practical.
-- Do not recreate copyrighted source images unless the user has rights or the result is sufficiently original and appropriate.
 
 ## Minimal Example
 
