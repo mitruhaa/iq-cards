@@ -3,10 +3,20 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+import markdown
 from flask import Flask, jsonify, render_template, request, send_from_directory, url_for
 
 from . import db
 from .importer import CardImportError, clear_all, import_cards
+
+
+MARKDOWN_EXTENSIONS = ["extra", "sane_lists", "nl2br"]
+
+
+def render_markdown(text: str | None) -> str:
+    if not text:
+        return ""
+    return markdown.markdown(text, extensions=MARKDOWN_EXTENSIONS, output_format="html")
 
 
 def create_app(test_config: dict | None = None) -> Flask:
@@ -45,8 +55,10 @@ def create_app(test_config: dict | None = None) -> Flask:
                 {
                     "id": card["id"],
                     "question": card["question"],
+                    "question_html": render_markdown(card["question"]),
                     "answer": {
                         "text": card["answer_text"],
+                        "html": render_markdown(card["answer_text"]),
                         "images": [
                             {
                                 "filename": filename,

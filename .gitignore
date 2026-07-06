@@ -6,5 +6,6 @@ htmlcov/
 .venv/
 venv/
 data/
+import/
 *.sqlite3
 *.db

@@ -88,9 +88,9 @@ function renderCard() {
   const card = state.cards[state.index];
   elements.progressText.textContent = `Card ${state.index + 1} of ${state.cards.length}`;
   elements.scoreText.textContent = `${state.correct} correct / ${state.incorrect} incorrect`;
-  elements.questionText.textContent = card.question;
-  elements.answerText.textContent = card.answer.text || "";
-  elements.answerText.hidden = !card.answer.text;
+  setMarkdownContent(elements.questionText, card.question_html, card.question);
+  setMarkdownContent(elements.answerText, card.answer.html, card.answer.text);
+  elements.answerText.hidden = !(card.answer.html || card.answer.text);
   elements.imageGallery.replaceChildren(
     ...card.answer.images.map((image) => {
       const img = document.createElement("img");
@@ -104,6 +104,15 @@ function renderCard() {
   elements.revealButton.hidden = state.revealed;
   elements.correctButton.hidden = !state.revealed;
   elements.incorrectButton.hidden = !state.revealed;
+}
+
+function setMarkdownContent(element, html, text = "") {
+  element.replaceChildren();
+  if (html) {
+    element.innerHTML = html;
+    return;
+  }
+  element.textContent = text || "";
 }
 
 function renderSummary() {

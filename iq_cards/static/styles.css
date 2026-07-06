@@ -246,6 +246,10 @@ main {
   backface-visibility: hidden;
 }
 
+.card-front {
+  overflow-y: auto;
+}
+
 .card-back {
   transform: rotateY(180deg);
   align-content: start;
@@ -269,14 +273,125 @@ main {
   line-height: 1.28;
 }
 
+.card-copy > * {
+  margin: 0;
+}
+
+.card-copy > * + * {
+  margin-top: 0.75em;
+}
+
+.card-copy h1,
+.card-copy h2,
+.card-copy h3,
+.card-copy h4,
+.card-copy h5,
+.card-copy h6 {
+  line-height: 1.16;
+}
+
+.card-copy h1 {
+  font-size: 1.28em;
+}
+
+.card-copy h2 {
+  font-size: 1.16em;
+}
+
+.card-copy h3,
+.card-copy h4,
+.card-copy h5,
+.card-copy h6 {
+  font-size: 1em;
+}
+
+.card-copy ul,
+.card-copy ol {
+  padding-left: 1.25em;
+}
+
+.card-copy li + li {
+  margin-top: 0.32em;
+}
+
+.card-copy li > p {
+  margin: 0.25em 0;
+}
+
+.card-copy blockquote {
+  border-left: 4px solid rgba(37, 99, 235, 0.32);
+  color: var(--muted);
+  padding-left: 0.85em;
+}
+
+.card-copy code,
+.card-copy pre {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-muted);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.card-copy code {
+  padding: 0.08em 0.28em;
+  font-size: 0.86em;
+}
+
+.card-copy pre {
+  overflow-x: auto;
+  padding: 0.8em;
+  font-size: 0.82em;
+  line-height: 1.45;
+}
+
+.card-copy pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  white-space: pre;
+}
+
+.card-copy a {
+  color: var(--primary);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.card-copy table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.8em;
+}
+
+.card-copy th,
+.card-copy td {
+  border: 1px solid var(--border);
+  padding: 0.45em 0.6em;
+  text-align: left;
+}
+
+.card-copy th {
+  background: var(--surface-muted);
+  font-weight: 750;
+}
+
+.card-copy hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
 .answer-content {
   display: grid;
   gap: 22px;
 }
 
 .answer-text {
-  font-size: 1.45rem;
-  font-weight: 650;
+  font-size: 1.22rem;
+  font-weight: 450;
+  line-height: 1.55;
 }
 
 .image-gallery {

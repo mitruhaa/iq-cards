@@ -7,6 +7,7 @@ IQ Cards is a small multi-platform flashcards app written in Python. It runs a l
 
 - Question-first flashcards with a flip animation for reveal.
 - Answers can contain text, images, or both.
+- Question and answer text support Markdown formatting.
 - Correct and incorrect answers are counted during each study session.
 - End-of-session summary shows correct count, total cards, and percentage.
 - `Import cards` replaces the current deck.
@@ -146,6 +147,7 @@ Basic format:
 Rules:
 
 - `question` must be non-empty text.
+- `question` and `answer.text` may use Markdown.
 - `answer.text` is optional.
 - `answer.images` is optional and must be a list of image filenames.
 - Each card must have answer text, images, or both.
