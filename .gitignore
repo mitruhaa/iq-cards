@@ -7,5 +7,6 @@ htmlcov/
 venv/
 data/
 import/
+tests/
 *.sqlite3
 *.db
